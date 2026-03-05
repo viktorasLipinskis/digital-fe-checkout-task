@@ -3,6 +3,15 @@ import Alpine from "alpinejs";
 
 window.Alpine = Alpine;
 
+Alpine.data("checkout", (products) => ({
+    selectedId: 3,
+    products: [],
+
+    get selectedProduct() {
+        return this.products.find((p) => p.id === this.selectedId);
+    },
+}));
+
 Alpine.data("countdownBanner", () => ({
     timeLeft: 900,
 
