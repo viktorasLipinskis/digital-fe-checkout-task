@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .btn-primary {
+        @apply inline-flex
+        items-center
+        justify-center
+        font-semibold
+        rounded-full
+        transition-colors
+        bg-btn-primary
+        hover:bg-btn-primary-hover
+        text-white
+        text-xs
+        md:text-sm
+        lg:text-base
+        px-6
+        py-2.5;
+    }
+}
+
