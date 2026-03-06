@@ -4,7 +4,7 @@
     <x-atoms.text size="4xl" color="secondary" class="text-center font-bold">
         {{ __('checkout.plan_selector.heading') }}
     </x-atoms.text>
-    <x-atoms.text size="4xl" class="font-bold">
+    <x-atoms.text size="4xl" class="font-bold italic">
         {{ __('checkout.plan_selector.subheading') }}
     </x-atoms.text>
 
@@ -48,6 +48,7 @@
         <x-atoms.text x-html="ctaText" size="xs" color="tertiary"
             class="h-27 leading-[18px] inline-block my-4 mr-6">
         </x-atoms.text>
-    </div>
 
+        <x-molecules.money-back />
+    </div>
 </div>

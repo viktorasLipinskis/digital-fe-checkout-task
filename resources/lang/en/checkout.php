@@ -24,5 +24,9 @@ return [
     'cta' => [
         'text' => 'By clicking Get my plan, I agree to pay :discountedPrice for my plan and than if I do not cancel before the end of the :slug introductory plan, Happyo will automatically charge my payment method the regular price :price every :months months thereafter until I cancel. I can cancel by contacting :email',
         'contact_email' => 'support@gethappyo.co',
+        'money_back_guarantee' => 'We offer a 100% money-back guarantee to users who have listened to at least 4 hypnotherapy sessions within 30 days and do not experience any improvement in their ADHD',
+    ],
+    'user_reviews' => [
+        'heading' => 'Users love our plan',
     ],
 ];

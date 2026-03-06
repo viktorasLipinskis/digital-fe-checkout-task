@@ -5,6 +5,18 @@
 [x-cloak] { display: none !important; }
 
 @layer components {
+    .stack {
+        @apply flex
+        gap-4
+    }
+
+    .stack-start-col {
+        @apply flex
+        flex-col
+        items-start
+        justify-start
+    }
+
     .stack-center {
         @apply flex
         items-center
