@@ -24,7 +24,7 @@
         }
     @endphp
 
-    <div class="w-[352px]">
+    <div x-show="products.length > 0" class="w-[356px]" x-cloak>
         @foreach ($products as $product)
             @php
                 $months = (int) $product['slug'];
@@ -41,7 +41,7 @@
                 :price="$price" :discountedPrice="$discountedPrice" :isMostPopular="$isMostPopular" />
         @endforeach
 
-        <x-atoms.button class="rounded-lg" full>
+        <x-atoms.button @click="submitOrder()" class="rounded-lg h-14" full>
             {{ __('checkout.button.order_now') }}
         </x-atoms.button>
 

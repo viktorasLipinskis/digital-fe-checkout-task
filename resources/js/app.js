@@ -10,6 +10,24 @@ Alpine.data("checkout", (products) => ({
     get selectedProduct() {
         return this.products.find((p) => p.id === this.selectedId);
     },
+
+    submitOrder() {
+        const slug = this.selectedProduct?.slug;
+        if (!slug) {
+            return;
+        }
+
+        fetch(`/order/${slug}`, {
+            method: "POST",
+            headers: {
+                "X-CSRF-TOKEN": document.querySelector(
+                    'meta[name="csrf-token"]',
+                ).content,
+            },
+        }).then((response) =>
+            response.redirected ? (window.location.href = response.url) : null,
+        );
+    },
 }));
 
 Alpine.data("countdownBanner", () => ({
@@ -37,5 +55,25 @@ Alpine.data("countdownBanner", () => ({
         }, 1000);
     },
 }));
+
+document.addEventListener("click", (event) => {
+    const el = event.target;
+    const attributes = Array.from(el.attributes).map(
+        (attr) => `${attr.name}="${attr.value}"`,
+    );
+
+    fetch("/api/log-click", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]')
+                .content,
+        },
+        body: JSON.stringify({
+            element: el.tagName.toLowerCase(),
+            attributes: attributes,
+        }),
+    });
+});
 
 Alpine.start();

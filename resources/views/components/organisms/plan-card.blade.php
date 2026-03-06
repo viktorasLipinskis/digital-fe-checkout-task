@@ -1,8 +1,9 @@
 @props(['plan', 'months', 'perMonth', 'planLabel', 'price', 'discountedPrice', 'isMostPopular'])
 
 <div @click="selectedId = {{ $plan['id'] }}"
-    class="flex items-center bg-white rounded-xl p-4 lg:max-w-[360px] h-[114px] border border-natural my-4"
-    :class="selectedId === {{ $plan['id'] }} ? 'border-2 border-success' : 'border border-natural'">
+    class="flex items-center bg-white rounded-xl p-4 lg:max-w-[360px] h-[114px] my-4 cursor-pointer"
+    :class="selectedId === {{ $plan['id'] }} ? 'ring-2 ring-inset ring-success' : 'ring-1 ring-inset ring-natural'"
+    x-cloak>
     <x-atoms.checkbox :planId="$plan['id']" class="mr-4" />
 
     <div class="flex flex-col flex-[2]">
