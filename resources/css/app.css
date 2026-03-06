@@ -2,7 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+[x-cloak] { display: none !important; }
+
 @layer components {
+    .stack-center {
+        @apply flex
+        items-center
+        justify-center
+    }
+
+    .stack-center-col {
+        @apply flex
+        flex-col
+        items-center
+        justify-center
+    }
+
     .btn-primary {
         @apply inline-flex
         items-center
@@ -20,4 +35,5 @@
         py-2.5;
     }
 }
+
 

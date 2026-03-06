@@ -11,7 +11,9 @@
         'base' => 'text-base',
         'lg' => 'text-lg',
         'xl' => 'text-xl',
-        '2xl' => 'text-[32px]',
+        '2xl' => 'text-[28px]',
+        '3xl' => 'text-[32px]',
+        '4xl' => 'text-[36px]',
     ];
 
     $colorClasses = [
@@ -26,6 +28,6 @@
     $underscoreClass = $underscore ? 'line-through' : '';
 @endphp
 
-<span {{ $attributes->merge(['class' => "inline-block $sizeClass $colorClass $underscoreClass"]) }}>
+<span {{ $attributes->merge(['class' => "$sizeClass $colorClass $underscoreClass"]) }}>
     {{ $slot }}
 </span>
