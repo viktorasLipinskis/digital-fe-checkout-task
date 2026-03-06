@@ -2,5 +2,5 @@
     <img src="{{ asset('images/money_back_logo.png') }}" alt="Money Back Guarantee" class="h-6 h-auto mr-4" />
     <x-atoms.text color="secondary" class="text-xs">
         {{ __('checkout.cta.money_back_guarantee') }}
-        </x-atoms.button>
+    </x-atoms.text>
 </div>

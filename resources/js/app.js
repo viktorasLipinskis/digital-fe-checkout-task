@@ -6,6 +6,7 @@ window.Alpine = Alpine;
 Alpine.data("checkout", (products) => ({
     selectedId: 3,
     products: [],
+    reviews: [],
     ctaTemplate: "",
     ctaEmail: "",
 

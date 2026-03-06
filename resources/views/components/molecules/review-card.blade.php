@@ -1,4 +1,4 @@
-@props(['name', 'age', 'review', 'handle', 'description'])
+@props(['name', 'age', 'handle', 'description'])
 
 <div class="stack-start-col rounded-lg bg-white max-w-[336px] md:max-w-[300px] h-fit">
     <div class="stack px-4 pt-4 pb-2">
