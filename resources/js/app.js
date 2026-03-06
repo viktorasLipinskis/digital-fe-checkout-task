@@ -6,9 +6,31 @@ window.Alpine = Alpine;
 Alpine.data("checkout", (products) => ({
     selectedId: 3,
     products: [],
+    ctaTemplate: "",
+    ctaEmail: "",
 
     get selectedProduct() {
         return this.products.find((p) => p.id === this.selectedId);
+    },
+
+    get ctaText() {
+        const product = this.selectedProduct;
+        if (!product || !this.ctaTemplate) return "";
+
+        const months = parseInt(product.slug);
+
+        return this.ctaTemplate
+            .replace(
+                ":discountedPrice",
+                `€${product.pricing.discounted_price.toFixed(2)}`,
+            )
+            .replace(":slug", product.slug.replace("-plan", ""))
+            .replace(":price", `€${product.pricing.price.toFixed(2)}`)
+            .replace(/:months/g, months)
+            .replace(
+                ":email",
+                `<a href="mailto:${this.ctaEmail}" class="underline text-primary">${this.ctaEmail}</a>`,
+            );
     },
 
     submitOrder() {

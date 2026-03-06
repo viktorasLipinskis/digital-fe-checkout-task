@@ -21,4 +21,8 @@ return [
         'plan_description' => 'Billed every :months months',
 
     ],
+    'cta' => [
+        'text' => 'By clicking Get my plan, I agree to pay :discountedPrice for my plan and than if I do not cancel before the end of the :slug introductory plan, Happyo will automatically charge my payment method the regular price :price every :months months thereafter until I cancel. I can cancel by contacting :email',
+        'contact_email' => 'support@gethappyo.co',
+    ],
 ];

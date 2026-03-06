@@ -45,6 +45,9 @@
             {{ __('checkout.button.order_now') }}
         </x-atoms.button>
 
+        <x-atoms.text x-html="ctaText" size="xs" color="tertiary"
+            class="h-27 leading-[18px] inline-block my-4 mr-6">
+        </x-atoms.text>
     </div>
 
 </div>
