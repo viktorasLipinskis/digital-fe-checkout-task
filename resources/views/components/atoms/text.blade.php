@@ -1,21 +1,9 @@
 @props([
-    'size' => 'base',
     'color' => 'primary',
     'underscore' => false,
 ])
 
 @php
-    $sizeClasses = [
-        'xs' => 'text-xs',
-        'sm' => 'text-sm',
-        'base' => 'text-base',
-        'lg' => 'text-lg',
-        'xl' => 'text-xl',
-        '2xl' => 'text-[28px]',
-        '3xl' => 'text-[32px]',
-        '4xl' => 'text-[36px]',
-    ];
-
     $colorClasses = [
         'primary' => 'text-font-primary',
         'secondary' => 'text-font-secondary',
@@ -23,11 +11,10 @@
         'danger' => 'text-font-danger',
     ];
 
-    $sizeClass = $sizeClasses[$size] ?? $sizeClasses['base'];
     $colorClass = $colorClasses[$color] ?? $colorClasses['primary'];
     $underscoreClass = $underscore ? 'line-through' : '';
 @endphp
 
-<span {{ $attributes->merge(['class' => "$sizeClass $colorClass $underscoreClass"]) }}>
+<span {{ $attributes->merge(['class' => "$colorClass $underscoreClass"]) }}>
     {{ $slot }}
 </span>

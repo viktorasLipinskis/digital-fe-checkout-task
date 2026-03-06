@@ -1,14 +1,14 @@
 @props(['products'])
 
 <div class="w-fit mx-auto max-w-[648px] stack-center-col">
-    <x-atoms.text size="4xl" color="secondary" class="text-center font-bold">
+    <x-atoms.text color="secondary" class="text-center font-bold leading-[1.2] text-[22px] md:text-[36px]">
         {{ __('checkout.plan_selector.heading') }}
-    </x-atoms.text>
-    <x-atoms.text size="4xl" class="font-bold italic">
-        {{ __('checkout.plan_selector.subheading') }}
+        <x-atoms.text class="font-bold italic leading-[1.2] text-[22px] md:text-[36px]">
+            {{ __('checkout.plan_selector.subheading') }}
+        </x-atoms.text>
     </x-atoms.text>
 
-    <x-atoms.text size="2xl" color="secondary" class="stack-center mt-8">
+    <x-atoms.text color="secondary" class="stack-center mt-6 md:mt-8 mb-1 md:mb-2 text-[22px] md:text-[28px]">
         {{ __('checkout.plan_selector.title') }}
     </x-atoms.text>
 
@@ -24,7 +24,7 @@
         }
     @endphp
 
-    <div x-show="products.length > 0" class="w-[356px]" x-cloak>
+    <div x-show="products.length > 0" class="w-[324px] md:w-[356px]" x-cloak>
         @foreach ($products as $product)
             @php
                 $months = (int) $product['slug'];
@@ -45,8 +45,7 @@
             {{ __('checkout.button.order_now') }}
         </x-atoms.button>
 
-        <x-atoms.text x-html="ctaText" size="xs" color="tertiary"
-            class="h-27 leading-[18px] inline-block my-4 mr-6">
+        <x-atoms.text x-html="ctaText" color="tertiary" class="h-27 leading-[18px] inline-block my-4 mr-6 text-xs">
         </x-atoms.text>
 
         <x-molecules.money-back />

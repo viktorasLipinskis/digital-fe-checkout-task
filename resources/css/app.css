@@ -30,6 +30,13 @@
         justify-center
     }
 
+    .page-gradient {
+        background-color: theme('colors.indigo.100');
+        background-image: linear-gradient(to bottom, white, theme('colors.indigo.100'));
+        background-size: 100% 100vh;
+        background-repeat: no-repeat;
+    }
+
     .btn-primary {
         @apply inline-flex
         items-center
@@ -40,10 +47,13 @@
         bg-btn-primary
         hover:bg-btn-primary-hover
         text-white
-        text-xs
+        text-sm
         md:text-sm
+        lg:text-xs
         lg:text-base
-        px-6
+        px-4
+        md:px-6
+        lg:px-6
         py-2.5;
     }
 }

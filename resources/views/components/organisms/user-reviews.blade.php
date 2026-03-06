@@ -1,11 +1,11 @@
 @props(['reviews'])
 
-<div class="stack-center-col mt-16">
-    <x-atoms.text color="secondary" size="2xl" weight="bold" class="mb-8">
+<div class="stack-center-col mt-16 pb-24 mx-3">
+    <x-atoms.text color="secondary" weight="bold" class="mb-8 text-[22px] md:text-[28px]">
         {{ __('checkout.user_reviews.heading') }}
     </x-atoms.text>
 
-    <div x-show="reviews.length > 0" class="stack-center items-start" x-cloak>
+    <div x-show="reviews.length > 0" class="flex gap-4 flex-col md:flex-row items-start justify-center" x-cloak>
         @foreach ($reviews as $review)
             @php
                 $name = $review['name'];

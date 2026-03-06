@@ -1,5 +1,5 @@
 <x-templates.checkout-layout>
-    <main class="bg-gradient-to-b from-white to-indigo-100 min-h-screen h-[120vh] ">
+    <main class="page-gradient min-h-screen">
         <div x-data='checkout'
             x-init='(
          products = @json($products),

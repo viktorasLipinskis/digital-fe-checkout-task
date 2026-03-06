@@ -7,13 +7,13 @@
     <x-atoms.checkbox :planId="$plan['id']" class="mr-4" />
 
     <div class="flex flex-col flex-[2]">
-        <x-atoms.text size="md" color="secondary" class="font-semibold">
+        <x-atoms.text color="secondary" class="font-semibold text-md">
             {{ $planLabel }}
         </x-atoms.text>
 
         <x-molecules.price-display :price="$price" :discountedPrice="$discountedPrice ?? null" />
 
-        <x-atoms.text size="xs" color="tertiary">
+        <x-atoms.text color="tertiary" class="text-xs">
             {{ __('checkout.plan_selector.plan_description', ['months' => $months]) }}
         </x-atoms.text>
 
@@ -24,13 +24,13 @@
         @endif
     </div>
 
-    <div class="separator h-full mx-2 border-l border-gray-300"></div>
+    <div class="separator h-full mx-1 md:mx-2  border-l border-gray-300"></div>
 
-    <div class="flex flex-col items-center justify-center flex-[1] min-w-[134px]">
-        <x-atoms.text size="3xl" color="secondary" class="font-semibold">
+    <div class="flex flex-col items-center justify-center flex-[1] min-w-[124px] md:min-w-[134px]">
+        <x-atoms.text color="secondary" class="font-semibold text-[32px]">
             &euro;{{ $perMonth }}
         </x-atoms.text>
-        <x-atoms.text size="xs" color='tertiary'>
+        <x-atoms.text color='tertiary' class="text-xs">
             {{ __('checkout.plan_selector.per_month') }}
         </x-atoms.text>
     </div>
